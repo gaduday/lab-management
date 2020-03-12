@@ -9,11 +9,11 @@ namespace LabManagement
 {
     public class Program
     {
-        // static readonly string YapFileName = Path.Combine(
-        //     Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-        //     "lab-management.yap");
+        static readonly string YapFileName = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            "lab-management.yap");
 
-        private static readonly string YapFileName = "/home/gagaduday/RiderProjects/LabManagement/lab-management.yap";
+        // private static readonly string YapFileName = "/home/gagaduday/RiderProjects/LabManagement/lab-management.yap";
 
         private static IObjectContainer db = Db4oEmbedded.OpenFile(YapFileName);
         
