@@ -9,9 +9,11 @@ namespace LabManagement
 {
     public class Program
     {
-        readonly static string YapFileName = Path.Combine(
-            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-            "lab-management.yap");
+        // static readonly string YapFileName = Path.Combine(
+        //     Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+        //     "lab-management.yap");
+
+        private static readonly string YapFileName = "/home/gagaduday/RiderProjects/LabManagement/lab-management.yap";
 
         private static IObjectContainer db = Db4oEmbedded.OpenFile(YapFileName);
         
@@ -148,7 +150,7 @@ namespace LabManagement
                 Console.WriteLine("a. Use a computer");
                 Console.WriteLine("b. Display all computers");
                 Console.WriteLine("c. Logout");
-                Console.WriteLine("c. Exit");
+                Console.WriteLine("d. Exit");
 
                 Console.Write("Choose an option: ");
                 option = Console.ReadLine();
@@ -156,10 +158,10 @@ namespace LabManagement
                 switch (option)
                 {
                     case "a":
-                        UserManagement.CreateUser(db);
+                        ComputerManagement.UseAComputer(db);
                         break;
                     case "b":
-                        UserManagement.RetrieveAllUsers(db);
+                        ComputerManagement.DisplayAllComputers(db);
                         break;
                     case "c":
                         // logout user

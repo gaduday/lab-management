@@ -29,19 +29,15 @@ namespace LabManagement
                     Console.Write("Enter username: ");
                     username = Console.ReadLine();
                 }
-
-                if (username != item.Username)
-                {
-                    Console.Write("Enter password: ");
-                    string password = Console.ReadLine();
-
-                    User user = new User(name, username, password);
-                    db.Store(user);
-
-                    Console.WriteLine("Stored {0}", user);
-                    return;
-                }
             }
+
+            Console.Write("Enter password: ");
+            string password = Console.ReadLine();
+
+            User user = new User(name, username, password, false);
+            db.Store(user);
+
+            Console.WriteLine("Stored {0}", user);
         }
 
         public static void ListResult(IObjectSet result)

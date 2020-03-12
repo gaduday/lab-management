@@ -12,12 +12,13 @@ namespace LabManagement
         {
             
         }
-        public User(string name, string username, string password)
+        public User(string name, string username, string password, bool isOnline)
         {
             // this.id = id;
             this.name = name;
             this.username = username;
             this.password = password;
+            this.isOnline = isOnline;
         }
 
         // public int Id
