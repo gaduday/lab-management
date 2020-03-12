@@ -1,0 +1,65 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "LabManagement/1.0.0": {
+        "dependencies": {
+          "db4o-core": "8.1.6"
+        },
+        "runtime": {
+          "LabManagement.dll": {}
+        }
+      },
+      "db4o-core/8.1.6": {
+        "runtime": {
+          "lib/netstandard2.0/Cecil.FlowAnalysis.dll": {
+            "assemblyVersion": "0.1.0.0",
+            "fileVersion": "0.0.0.0"
+          },
+          "lib/netstandard2.0/Db4objects.Db4o-gpl-2010.dll": {
+            "assemblyVersion": "8.1.269.14431",
+            "fileVersion": "0.0.0.0"
+          },
+          "lib/netstandard2.0/Db4objects.Db4o.CS-2010.dll": {
+            "assemblyVersion": "8.1.269.14430",
+            "fileVersion": "0.0.0.0"
+          },
+          "lib/netstandard2.0/Db4objects.Db4o.Instrumentation-2010.dll": {
+            "assemblyVersion": "8.1.269.14430",
+            "fileVersion": "0.0.0.0"
+          },
+          "lib/netstandard2.0/Db4objects.Db4o.Linq-2010.dll": {
+            "assemblyVersion": "8.1.269.14430",
+            "fileVersion": "0.0.0.0"
+          },
+          "lib/netstandard2.0/Db4objects.Db4o.NativeQueries.dll": {
+            "assemblyVersion": "8.1.269.14430",
+            "fileVersion": "0.0.0.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.dll": {
+            "assemblyVersion": "0.11.0.0",
+            "fileVersion": "0.11.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LabManagement/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "db4o-core/8.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SylnRFpEA26e1TgtQ8VofYLd9jk2oInmdTVSWEIp4OL4KABcNDLKqnasQROLQVyph43BAHsUqh0CUguyGtgVEg==",
+      "path": "db4o-core/8.1.6",
+      "hashPath": "db4o-core.8.1.6.nupkg.sha512"
+    }
+  }
+}

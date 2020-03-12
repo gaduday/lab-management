@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/gagaduday/.dotnet/store/|arch|/|tfm|",
+      "/home/gagaduday/.nuget/packages"
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "db4o-core/8.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Cecil.FlowAnalysis.dll": {},
+          "lib/netstandard2.0/Db4objects.Db4o-gpl-2010.dll": {},
+          "lib/netstandard2.0/Db4objects.Db4o.CS-2010.dll": {},
+          "lib/netstandard2.0/Db4objects.Db4o.Instrumentation-2010.dll": {},
+          "lib/netstandard2.0/Db4objects.Db4o.Linq-2010.dll": {},
+          "lib/netstandard2.0/Db4objects.Db4o.NativeQueries.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Cecil.FlowAnalysis.dll": {},
+          "lib/netstandard2.0/Db4objects.Db4o-gpl-2010.dll": {},
+          "lib/netstandard2.0/Db4objects.Db4o.CS-2010.dll": {},
+          "lib/netstandard2.0/Db4objects.Db4o.Instrumentation-2010.dll": {},
+          "lib/netstandard2.0/Db4objects.Db4o.Linq-2010.dll": {},
+          "lib/netstandard2.0/Db4objects.Db4o.NativeQueries.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "db4o-core/8.1.6": {
+      "sha512": "SylnRFpEA26e1TgtQ8VofYLd9jk2oInmdTVSWEIp4OL4KABcNDLKqnasQROLQVyph43BAHsUqh0CUguyGtgVEg==",
+      "type": "package",
+      "path": "db4o-core/8.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "db4o-core.8.1.6.nupkg.sha512",
+        "db4o-core.nuspec",
+        "lib/netstandard2.0/Cecil.FlowAnalysis.dll",
+        "lib/netstandard2.0/Cecil.FlowAnalysis.xml",
+        "lib/netstandard2.0/Db4objects.Db4o-gpl-2010.dll",
+        "lib/netstandard2.0/Db4objects.Db4o-gpl-2010.xml",
+        "lib/netstandard2.0/Db4objects.Db4o.CS-2010.dll",
+        "lib/netstandard2.0/Db4objects.Db4o.CS-2010.xml",
+        "lib/netstandard2.0/Db4objects.Db4o.Instrumentation-2010.dll",
+        "lib/netstandard2.0/Db4objects.Db4o.Instrumentation-2010.xml",
+        "lib/netstandard2.0/Db4objects.Db4o.Linq-2010.dll",
+        "lib/netstandard2.0/Db4objects.Db4o.Linq-2010.xml",
+        "lib/netstandard2.0/Db4objects.Db4o.NativeQueries.dll",
+        "lib/netstandard2.0/Db4objects.Db4o.NativeQueries.xml",
+        "lib/netstandard2.0/Mono.Cecil.dll"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "db4o-core >= 8.1.6"
+    ]
+  },
+  "packageFolders": {
+    "/home/gagaduday/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/gagaduday/RiderProjects/LabManagement/LabManagement/LabManagement.csproj",
+      "projectName": "LabManagement",
+      "projectPath": "/home/gagaduday/RiderProjects/LabManagement/LabManagement/LabManagement.csproj",
+      "packagesPath": "/home/gagaduday/.nuget/packages/",
+      "outputPath": "/home/gagaduday/RiderProjects/LabManagement/LabManagement/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/gagaduday/.config/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "dependencies": {
+          "db4o-core": {
+            "target": "Package",
+            "version": "[8.1.6, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
