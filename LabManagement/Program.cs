@@ -9,6 +9,8 @@ namespace LabManagement
 {
     public class Program
     {
+        public static string userUsing;
+        
         static readonly string YapFileName = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
             "lab-management.yap");
@@ -43,7 +45,7 @@ namespace LabManagement
             } while (option != "a" || option != "b");
         }
 
-        public static void Login()
+        private static void Login()
         {
             int loginCounter = 0;
 
@@ -60,6 +62,7 @@ namespace LabManagement
                 {
                     if (item.Username == username && item.Password == password)
                     {
+                        userUsing = item.Username;
                         item.IsOnline = true;
                         Console.WriteLine("Login successful!");
                         if (item.Username == "admin")
@@ -76,11 +79,11 @@ namespace LabManagement
                 }
                 loginCounter++;
                 Console.WriteLine("Invalid username or password! Please login again!");
-                Console.WriteLine(3 - loginCounter + "login attemps remaining!");
+                Console.WriteLine(3 - loginCounter + "login attempts remaining!");
             }
         }
 
-        public static void ShowMenuAdmin()
+        private static void ShowMenuAdmin()
         {
             string option = "";
             do
@@ -94,7 +97,7 @@ namespace LabManagement
                 Console.WriteLine("g. Update a new computer");
                 Console.WriteLine("h. Delete a new computer");
                 Console.WriteLine("i. Use a computer");
-                Console.WriteLine("j. Logout");
+                Console.WriteLine("j. Show usage history");
                 Console.WriteLine("k. Exit");
 
                 Console.Write("Choose an option: ");
@@ -112,25 +115,25 @@ namespace LabManagement
                         UserManagement.UpdateAnUser(db);
                         break;
                     case "d":
-                        // delete user
+                        UserManagement.DeleteAnUser(db);
                         break;
                     case "e":
                         ComputerManagement.AddNewComputer(db);
                         break;
                     case "f":
-                        ComputerManagement.DisplayAllComputers(db);
+                        ShowUserAndComputer(db);
                         break;
                     case "g":
-                        // update a computer
+                        ComputerManagement.UpdateAComputer(db);
                         break;
                     case "h":
-                        // delete a computer
+                        ComputerManagement.DeleteAComputer(db);
                         break;
                     case "i":
                         ComputerManagement.UseAComputer(db);
                         break;
                     case "j":
-                        // logout
+                        ShowUsageHistory(db);
                         break;
                     case "k":
                         Console.WriteLine("Exiting...");
@@ -142,15 +145,16 @@ namespace LabManagement
             } while (option != "k");
         }
 
-        public static void ShowMenuUser()
+        private static void ShowMenuUser()
         {
             string option = "";
             do
             {
                 Console.WriteLine("a. Use a computer");
                 Console.WriteLine("b. Display all computers");
-                Console.WriteLine("c. Logout");
-                Console.WriteLine("d. Exit");
+                Console.WriteLine("c. Stop using a computer");
+                Console.WriteLine("d. Logout");
+                Console.WriteLine("e. Exit");
 
                 Console.Write("Choose an option: ");
                 option = Console.ReadLine();
@@ -164,18 +168,50 @@ namespace LabManagement
                         ComputerManagement.DisplayAllComputers(db);
                         break;
                     case "c":
+                        ComputerManagement.StopUsingAComputer(db);
+                        break;;
+                    case "d":
                         // logout user
                         break;
-                    case "d":
+                    case "e":
                         Console.WriteLine("Exiting...");
                         break;
                     default:
                         Console.WriteLine("Please choose a valid option!");
                         break;
                 }
-            } while (option != "d");
+            } while (option != "e");
         }
-        
-        // public static 
+
+        private static void ShowUserAndComputer(IObjectContainer db)
+        {
+            var result = from UsageInformation ui in db select ui;
+
+            foreach (var item in result)
+            {
+                Console.WriteLine("Computer {0} is using by {1}", item.ComputerId, item.UserUsername);
+            }
+        }
+
+        private static void ShowUsageHistory(IObjectContainer db)
+        {
+            Console.Write("Please enter computer id to show usage history: ");
+            string id = Console.ReadLine();
+            int num;
+            
+            while (!int.TryParse(id, out num))
+            {
+                Console.WriteLine("ID must be number! Please try again!");
+                Console.Write("Please enter computer id: ");
+                id = Console.ReadLine();
+            }
+            
+            var result = from UsageInformation ui in db where ui.ComputerId.ToString() == id select ui;
+
+            foreach (var item in result)
+            {
+                Console.WriteLine("Computer {0} is used by {1} at {2} and ended at {3}", item.ComputerId, item.UserUsername, item.TimeStartUsing, item. TimeFinishUsing);
+            }
+        }
     }
 }

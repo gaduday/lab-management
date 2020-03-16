@@ -25,7 +25,7 @@ namespace LabManagement
             {
                 while (username == item.Username)
                 {
-                    Console.WriteLine("Invalid username!");
+                    Console.WriteLine("Username already used!");
                     Console.Write("Enter username: ");
                     username = Console.ReadLine();
                 }
@@ -97,22 +97,21 @@ namespace LabManagement
             }
         }
 
-        // public static void DeleteAnUser(IObjectContainer db)
-        // {
-        //     Console.Write("Enter username to edit: ");
-        //     string username = Console.ReadLine();
-        //     // linq query select user with username equal input username
-        //     var result = from User u in db where u.Username == username select u;
-        //     if (!result.Any())
-        //     {
-        //         Console.WriteLine("Invalid username. Please try again!");
-        //     }
-        //
-        //     foreach (var item in result)
-        //     {
-        //         User user = new User();
-        //         db.User.Remove(item);
-        //     }
-        // }
+        public static void DeleteAnUser(IObjectContainer db)
+        {
+            Console.Write("Enter username to edit: ");
+            string username = Console.ReadLine();
+            // linq query select user with username equal input username
+            var result = from User u in db where u.Username == username select u;
+            if (!result.Any())
+            {
+                Console.WriteLine("Invalid username. Please try again!");
+            }
+        
+            foreach (var item in result)
+            {
+                db.Delete(item);
+            }
+        }
     }
 }

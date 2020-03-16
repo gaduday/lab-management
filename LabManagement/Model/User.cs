@@ -6,7 +6,7 @@ namespace LabManagement
         private string name;
         private string username;
         private string password;
-        private bool isOnline;
+        private bool isOnline = false;
 
         public User()
         {
